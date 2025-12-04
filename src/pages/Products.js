@@ -20,7 +20,7 @@ function Products() {
         <Col>
           <div className="text-center">
             <h1 className="display-4 mb-4">Nos Produits</h1>
-            <p className="lead text-muted">Découvrez notre collection</p>
+            <p className="lead text-muted">Découvrez notre collection de Vetements tendance et abordables.</p>  
           </div>
         </Col>
       </Row>

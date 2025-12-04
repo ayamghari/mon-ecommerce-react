@@ -1,9 +1,22 @@
 import React from "react";
 import { Card, Button, Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      // Rediriger vers login si pas connecté
+      navigate("/login");
+    } else {
+      addToCart(product);
+    }
+  };
 
   return (
     <Card className="h-100 shadow-sm product-card">
@@ -25,11 +38,7 @@ function ProductCard({ product }) {
 
         <div className="d-flex justify-content-between align-items-center mt-auto">
           <h5 className="text-success mb-0">{product.price}€</h5>
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={() => addToCart(product)}
-          >
+          <Button variant="primary" size="sm" onClick={handleAddToCart}>
             <i className="fas fa-plus me-1"></i>
             Ajouter
           </Button>

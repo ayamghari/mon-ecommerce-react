@@ -1,55 +1,476 @@
-/* Styles globaux */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
+/* ========================================
+   AYASHOP - E-COMMERCE MODERNE
+   COULEURS PLATES : NOIR / BLEU MARINE / GRIS / ROSE
+   ======================================== */
+
+:root {
+  --primary-color: #63daca;      /* Rose foncé */
+  --secondary-color: #1B2845;    /* Bleu marine foncé */
+  --accent-color: #5C6B8A;       /* Gris-bleu */
+  --dark-color: #000000;         /* Noir */
+  --light-gray: #E8E8E8;         /* Gris clair */
+  --white: #FFFFFF;
+  --text-dark: #2D2D2D;
+  --text-light: #6C757D;
+}
+
+/* ========================================
+   STYLES GLOBAUX
+   ======================================== */
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #F5F5F5;
+  color: var(--text-dark);
 }
 
 .App {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Animations pour les cartes produits */
+/* ========================================
+   NAVBAR
+   ======================================== */
+
+.navbar {
+  background-color: var(--secondary-color) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem !important;
+  font-weight: 700;
+  color: var(--primary-color) !important;
+  letter-spacing: 2px;
+}
+
+.navbar-nav .nav-link {
+  color: var(--white) !important;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+  padding: 8px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.badge {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+  
+  color: white;
+  min-height:600PX;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background-image: url('image/photo-1637228393246-c38a4b3d2011.jpg');
+  background-attachment: fixed;
+   background-size: cover;     
+}
+
+
+.hero-section h1 {
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   BOUTONS
+   ======================================== */
+
+.btn {
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #E55A9D !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.btn-outline-primary {
+  background-color: transparent !important;
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.btn-light {
+  background-color: white !important;
+  color: var(--secondary-color) !important;
+  border: none;
+}
+
+.btn-light:hover {
+  background-color: var(--light-gray) !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  color: white !important;
+}
+
+.btn-outline-light:hover {
+  background-color: white !important;
+  color: var(--secondary-color) !important;
+}
+
+.btn-success {
+  background-color: #28A745 !important;
+  color: white !important;
+}
+
+.btn-success:hover {
+  background-color: #218838 !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  background-color: transparent !important;
+  border: 2px solid var(--accent-color) !important;
+  color: var(--accent-color) !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.btn-outline-danger {
+  background-color: transparent !important;
+  border: 2px solid #DC3545 !important;
+  color: #DC3545 !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #DC3545 !important;
+  color: white !important;
+}
+
+/* ========================================
+   CARTES PRODUITS
+   ======================================== */
+
 .product-card {
   transition: all 0.3s ease;
-  border: none !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E0E0E0 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
 }
 
 .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color) !important;
+}
+
+.product-card img {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card .card-body {
+  padding: 1.5rem;
+}
+
+.product-card .badge {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.product-card h5 {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin: 12px 0;
+}
+
+.product-card .text-success {
+  color: var(--primary-color) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700;
+}
+
+/* ========================================
+   FILTRES
+   ======================================== */
+
+.btn-group {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-group .btn {
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 600;
+}
+
+.btn-group .btn-primary {
+  background-color: var(--primary-color) !important;
+  color: white;
+  border: none;
+}
+
+.btn-group .btn-outline-primary {
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-group .btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 60px 0 30px;
+  margin-top: auto;
+}
+
+.footer-section {
+  margin-bottom: 30px;
+}
+
+.footer-section h5 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: var(--primary-color);
+  padding-left: 5px;
+}
+
+.footer-social a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  margin: 0 8px;
+  color: var(--white);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.footer-social a:hover {
+  background-color: var(--primary-color);
   transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
-/* Hero section */
-.hero-section {
-  background-image: url('image/photo-1637228393246-c38a4b3d2011.jpg');
-  
-  color: rgb(15, 15, 15);
-  min-height: 500px;
-  display: flex;
-  align-items: center;
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+  margin-top: 40px;
+  text-align: center;
 }
 
-/* Navbar */
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* Responsive */
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+  border-radius: 12px;
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.card-header {
+  background-color: var(--secondary-color) !important;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 1rem 1.5rem;
+}
+
+.bg-light {
+  background-color: #F8F9FA !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.alert {
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+}
+
+.alert-success {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.alert-info {
+  background-color: #D1ECF1;
+  color: #0C5460;
+}
+
+/* ========================================
+   TABLES
+   ======================================== */
+
+.table {
+  background-color: white;
+}
+
+.table thead {
+  background-color: #F8F9FA;
+}
+
+.table tbody tr:hover {
+  background-color: #F8F9FA;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
 @media (max-width: 768px) {
   .hero-section {
     min-height: 400px;
-    padding: 40px 0;
+    padding: 40px 20px;
   }
-
+  
   .hero-section h1 {
     font-size: 2rem;
   }
-
-  .hero-section .lead {
-    font-size: 1rem;
+  
+  .navbar-brand {
+    font-size: 1.5rem !important;
   }
+  
+  footer {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+/* ========================================
+   UTILITAIRES
+   ======================================== */
+
+.shadow-sm {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+.rounded {
+  border-radius: 8px !important;
+}
+
+.text-muted {
+  color: var(--text-light) !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
 }
