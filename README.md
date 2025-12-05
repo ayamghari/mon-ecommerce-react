@@ -1,5 +1,6 @@
 # 🛍️ AyaShop - Site web E-commerce React
-  Site web e-commerce moderne développée avec React et Bootstrap. Permet aux utilisateurs de parcourir des produits, gérer leur panier et créer un compte.
+
+Site web e-commerce moderne développée avec React et Bootstrap. Permet aux utilisateurs de parcourir des produits, gérer leur panier et créer un compte.
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=flat&logo=bootstrap)
@@ -10,23 +11,23 @@
 
 ### Page d'Accueil
 
-![Accueil](./screenshots/home.png)
+![Accueil](./screenshots/home.PNG)
 
 ### Catalogue Produits
 
-![Produits](./screenshots/products.png)
+![Produits](./screenshots/products.PNG)
 
 ### Connexion
 
-![Login](./screenshots/login.png)
+![Login](./screenshots/login.PNG)
 
 ### Panier d'Achats
 
-![Panier](./screenshots/cart.png)
+![Panier](./screenshots/cart.PNG)
 
 ### Dashboard Client
 
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/dashboard.PNG)
 
 ---
 
@@ -83,3 +84,4 @@ src/
 ├── App.js
 └── index.js
 
+```
