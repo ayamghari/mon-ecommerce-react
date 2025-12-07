@@ -71,7 +71,7 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>&copy; 2024 AyaShop. Tous droits réservés. Développé avec ❤️ par Aya El Mghari</p>
+          <p>&copy; 2024 AyaShop. Tous droits réservés.</p>
         </div>
       </Container>
     </footer>

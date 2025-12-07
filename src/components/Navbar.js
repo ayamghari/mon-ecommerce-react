@@ -12,6 +12,7 @@ function Navbar() {
     <BSNavbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container>
         <BSNavbar.Brand as={Link} to="/">
+        <li className="fas fa-shopping-bag me-2"></li>
           AyaShop
         </BSNavbar.Brand>
 
